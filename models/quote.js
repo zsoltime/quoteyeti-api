@@ -2,16 +2,12 @@
 
 const db = require('../db');
 
-module.exports.random = function random(limit = 1, cb) {
+module.exports.random = function random(limit, cb) {
   const col = db.collection('quotes');
-
-  const cursor = col.aggregate([
-    {
-      $sample: {
-        size: limit,
-      },
-    },
-  ]);
+  const size = parseInt(limit, 10) || 1;
+  const cursor = col.aggregate([{
+    $sample: { size },
+  }]);
 
   cursor.toArray()
     .then(docs => cb(null, docs))
