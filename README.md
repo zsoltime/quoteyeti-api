@@ -24,3 +24,27 @@ I will try to make a nice [documentation](http://quoteyeti.com) to make your lif
 | GET | /authors | Get all the authors |
 | GET | /authors/search/:query/:num? | Search for authors, limited to `:num` results (default is 1) |
 | GET | /quotes/by/:author | Get all the quotes by `:author` |
+
+---
+
+## Example Usage
+
+Get a random quote:
+
+```javascript
+// Using the fetch API
+fetch('http://localhost:3000/quotes')
+  .then(res => res.json())
+  .then((res) => {
+    const { author, quote, categories } = res[0];
+    console.log(`${quote} - by ${author.name}`);
+  });
+```
+
+```javascript
+// Using good old jQuery
+$.getJSON('http://localhost:3000/quotes', (res) => {
+  const { author, quote, categories } = res[0];
+  console.log(`${quote} - by ${author.name}`);
+});
+```
