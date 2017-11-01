@@ -13,6 +13,13 @@ describe('GET /', () => {
       .expect(200, done);
   });
 
+  it('should support CORS requests', (done) => {
+    request(app)
+      .get('/')
+      .expect('Access-Control-Allow-Origin', '*')
+      .expect(200, done);
+  });
+
   it('should return one random quote', (done) => {
     request(app)
       .get('/')
