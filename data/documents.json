@@ -1,0 +1,26 @@
+[{
+  "_id": "560956fad8e34001",
+  "quote": "The secret of getting ahead is getting started.",
+  "author": {
+    "name": "Mark Twain",
+    "slug": "mark-twain"
+  },
+  "categories": [
+    "motivation"
+  ],
+  "keywords": []
+}, {
+  "_id": "534605126f80ba6c",
+  "quote": "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+  "author": {
+    "name": "Thomas A. Edison",
+    "slug": "thomas-a-edison"
+  },
+  "categories": [
+    "motivation"
+  ],
+  "keywords": [
+    "success",
+    "try"
+  ]
+}]
