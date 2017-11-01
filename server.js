@@ -4,6 +4,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const db = require('./db');
+const routes = require('./routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ const mongoURL = process.env.MONGODB_URI || 'mongodb://localhost:27017/quotes';
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(routes);
 
 db.connect(mongoURL)
   .then((err) => {
